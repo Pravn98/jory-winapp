@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Base36.NetStandard</name>
+    </assembly>
+    <members>
+        <member name="T:AdvancedREI.Base36">
+            <summary>
+            Class representing a Base36 number
+            </summary>
+        </member>
+        <member name="F:AdvancedREI.Base36.MaxValue">
+            <summary>
+            Base36 containing the maximum supported value for this type
+            </summary>
+        </member>
+        <member name="F:AdvancedREI.Base36.MinValue">
+            <summary>
+            Base36 containing the minimum supported value for this type
+            </summary>
+        </member>
+        <member name="M:AdvancedREI.Base36.#ctor(System.Int64)">
+            <summary>
+            Instantiate a Base36 number from a long value
+            </summary>
+            <param name="numericValue">The long value to give to the Base36 number</param>
+        </member>
+        <member name="M:AdvancedREI.Base36.#ctor(System.String)">
+            <summary>
+            Instantiate a Base36 number from a Base36 string
+            </summary>
+            <param name="value">The value to give to the Base36 number</param>
+        </member>
+        <member name="P:AdvancedREI.Base36.NumericValue">
+            <summary>
+            Get or set the value of the type using a base-10 long integer
+            </summary>
+        </member>
+        <member name="P:AdvancedREI.Base36.Value">
+            <summary>
+            Get or set the value of the type using a Base36 string
+            </summary>
+        </member>
+        <member name="M:AdvancedREI.Base36.Base36ToNumber(System.String)">
+            <summary>
+            Static method to convert a Base36 string to a long integer (base-10)
+            </summary>
+            <param name="base36Value">The number to convert from</param>
+            <returns>The long integer</returns>
+        </member>
+        <member name="M:AdvancedREI.Base36.NumberToBase36(System.Int64)">
+            <summary>
+            Public static method to convert a long integer (base-10) to a Base36 number
+            </summary>
+            <param name="numericValue">The base-10 long integer</param>
+            <returns>A Base36 representation</returns>
+        </member>
+        <member name="M:AdvancedREI.Base36.op_GreaterThan(AdvancedREI.Base36,AdvancedREI.Base36)">
+            <summary>
+            Operator overload
+            </summary>
+            <param name="lhs"></param>
+            <param name="rhs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdvancedREI.Base36.op_LessThan(AdvancedREI.Base36,AdvancedREI.Base36)">
+            <summary>
+            Operator overload
+            </summary>
+            <param name="LHS"></param>
+            <param name="RHS"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdvancedREI.Base36.op_GreaterThanOrEqual(AdvancedREI.Base36,AdvancedREI.Base36)">
+            <summary>
+            Operator overload
+            </summary>
+            <param name="LHS"></param>
+            <param name="RHS"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdvancedREI.Base36.op_LessThanOrEqual(AdvancedREI.Base36,AdvancedREI.Base36)">
+            <summary>
+            Operator overload
+            </summary>
+            <param name="LHS"></param>
+            <param name="RHS"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdvancedREI.Base36.op_Equality(AdvancedREI.Base36,AdvancedREI.Base36)">
+            <summary>
+            Operator overload
+            </summary>
+            <param name="LHS"></param>
+            <param name="RHS"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdvancedREI.Base36.op_Inequality(AdvancedREI.Base36,AdvancedREI.Base36)">
+            <summary>
+            Operator overload
+            </summary>
+            <param name="LHS"></param>
+            <param name="RHS"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdvancedREI.Base36.op_Addition(AdvancedREI.Base36,AdvancedREI.Base36)">
+            <summary>
+            Operator overload
+            </summary>
+            <param name="LHS"></param>
+            <param name="RHS"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdvancedREI.Base36.op_Subtraction(AdvancedREI.Base36,AdvancedREI.Base36)">
+            <summary>
+            Operator overload
+            </summary>
+            <param name="LHS"></param>
+            <param name="RHS"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdvancedREI.Base36.op_Increment(AdvancedREI.Base36)">
+            <summary>
+            Operator overload
+            </summary>
+            <param name="Value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdvancedREI.Base36.op_Decrement(AdvancedREI.Base36)">
+            <summary>
+            Operator overload
+            </summary>
+            <param name="Value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdvancedREI.Base36.op_Multiply(AdvancedREI.Base36,AdvancedREI.Base36)">
+            <summary>
+            Operator overload
+            </summary>
+            <param name="LHS"></param>
+            <param name="RHS"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdvancedREI.Base36.op_Division(AdvancedREI.Base36,AdvancedREI.Base36)">
+            <summary>
+            Operator overload
+            </summary>
+            <param name="LHS"></param>
+            <param name="RHS"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdvancedREI.Base36.op_Modulus(AdvancedREI.Base36,AdvancedREI.Base36)">
+            <summary>
+            Operator overload
+            </summary>
+            <param name="LHS"></param>
+            <param name="RHS"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdvancedREI.Base36.op_Implicit(AdvancedREI.Base36)~System.Int64">
+            <summary>
+            Converts type Base36 to a base-10 long
+            </summary>
+            <param name="Value">The Base36 object</param>
+            <returns>The base-10 long integer</returns>
+        </member>
+        <member name="M:AdvancedREI.Base36.op_Implicit(AdvancedREI.Base36)~System.Int32">
+            <summary>
+            Converts type Base36 to a base-10 integer
+            </summary>
+            <param name="Value">The Base36 object</param>
+            <returns>The base-10 integer</returns>
+        </member>
+        <member name="M:AdvancedREI.Base36.op_Implicit(AdvancedREI.Base36)~System.Int16">
+            <summary>
+            Converts type Base36 to a base-10 short
+            </summary>
+            <param name="Value">The Base36 object</param>
+            <returns>The base-10 short</returns>
+        </member>
+        <member name="M:AdvancedREI.Base36.op_Implicit(System.Int64)~AdvancedREI.Base36">
+            <summary>
+            Converts a long (base-10) to a Base36 type
+            </summary>
+            <param name="Value">The long to convert</param>
+            <returns>The Base36 object</returns>
+        </member>
+        <member name="M:AdvancedREI.Base36.op_Explicit(AdvancedREI.Base36)~System.String">
+            <summary>
+            Converts type Base36 to a string; must be explicit, since
+            Base36 > string is dangerous!
+            </summary>
+            <param name="Value">The Base36 type</param>
+            <returns>The string representation</returns>
+        </member>
+        <member name="M:AdvancedREI.Base36.op_Implicit(System.String)~AdvancedREI.Base36">
+            <summary>
+            Converts a string to a Base36
+            </summary>
+            <param name="Value">The string (must be a Base36 string)</param>
+            <returns>A Base36 type</returns>
+        </member>
+        <member name="M:AdvancedREI.Base36.ToString">
+            <summary>
+            Returns a string representation of the Base36 number
+            </summary>
+            <returns>A string representation</returns>
+        </member>
+        <member name="M:AdvancedREI.Base36.GetHashCode">
+            <summary>
+            A unique value representing the value of the number
+            </summary>
+            <returns>The unique number</returns>
+        </member>
+        <member name="M:AdvancedREI.Base36.Equals(System.Object)">
+            <summary>
+            Determines if an object has the same value as the instance
+            </summary>
+            <param name="obj">The object to compare</param>
+            <returns>True if the values are the same</returns>
+        </member>
+        <member name="M:AdvancedREI.Base36.ToString(System.Int32)">
+            <summary>
+            Returns a string representation padding the leading edge with
+            zeros if necessary to make up the number of characters
+            </summary>
+            <param name="minimumDigits">The minimum number of digits that the string must contain</param>
+            <returns>The padded string representation</returns>
+        </member>
+        <member name="T:System.Base36Extensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Base36Extensions.ToBase36(System.Int64)">
+            <summary>
+            Converts a <see cref="T:System.Int64" /> number to a Base36 string. 
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Base36Extensions.FromBase36(System.String)">
+            <summary>
+            Converts a Base36 alphanumeric string to its <see cref="T:System.Int64">numerical</see> representation.
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

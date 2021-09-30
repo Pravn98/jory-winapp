@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VoyagerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="VoyagerEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BatchCloses" EntityType="VoyagerModel.BatchCloses" />
+    <EntitySet Name="DeviceSerials" EntityType="VoyagerModel.DeviceSerials" />
+    <EntitySet Name="HostTotals" EntityType="VoyagerModel.HostTotals" />
+    <EntitySet Name="Keys" EntityType="VoyagerModel.Keys" />
+    <EntitySet Name="MerchantKeys" EntityType="VoyagerModel.MerchantKeys" />
+    <EntitySet Name="Merchants" EntityType="VoyagerModel.Merchants" />
+    <EntitySet Name="TimeZones" EntityType="VoyagerModel.TimeZones" />
+    <EntitySet Name="Tokens" EntityType="VoyagerModel.Tokens" />
+    <EntitySet Name="KeyView" EntityType="VoyagerModel.KeyView" />
+    <EntitySet Name="CreditOfferScheduledPaymentAttempts" EntityType="VoyagerModel.CreditOfferScheduledPaymentAttempts" />
+    <EntitySet Name="CreditOfferScheduledPayments" EntityType="VoyagerModel.CreditOfferScheduledPayments" />
+    <EntitySet Name="CreditOfferDetails" EntityType="VoyagerModel.CreditOfferDetails" />
+    <EntitySet Name="CreditRequests" EntityType="VoyagerModel.CreditRequests" />
+    <EntitySet Name="DeviceTerminalLinks" EntityType="VoyagerModel.DeviceTerminalLinks" />
+    <EntitySet Name="UpdateOrderResponses" EntityType="VoyagerModel.UpdateOrderResponses" />
+    <EntitySet Name="ApiKeys" EntityType="VoyagerModel.ApiKeys" />
+    <EntitySet Name="ForwardTxnRequests" EntityType="VoyagerModel.ForwardTxnRequests" />
+    <EntitySet Name="PosIntegrations" EntityType="VoyagerModel.PosIntegrations" />
+    <EntitySet Name="Processors" EntityType="VoyagerModel.Processors" />
+    <EntitySet Name="Requests" EntityType="VoyagerModel.Requests" />
+    <EntitySet Name="PosEnabled" EntityType="VoyagerModel.PosEnabled" />
+  </EntityContainer>
+  <EntityType Name="BatchCloses">
+    <Key>
+      <PropertyRef Name="batchCloseId" />
+    </Key>
+    <Property Name="batchCloseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceSerialID" Type="Int32" Nullable="false" />
+    <Property Name="DeviceSerial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MerchantID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="DeviceSerials">
+    <Key>
+      <PropertyRef Name="DeviceSerialID" />
+    </Key>
+    <Property Name="DeviceSerialID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MerchantID" Type="Int32" Nullable="false" />
+    <Property Name="DeviceSerial" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HostTotals">
+    <Key>
+      <PropertyRef Name="HostTotalID" />
+    </Key>
+    <Property Name="HostTotalID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="withdrawalAmount" Type="Int32" Nullable="false" />
+    <Property Name="withdrawalCount" Type="Int32" Nullable="false" />
+    <Property Name="kid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Keys">
+    <Key>
+      <PropertyRef Name="kid" />
+    </Key>
+    <Property Name="kid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="mkey" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pkey" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="key1" Type="Binary" MaxLength="50" FixedLength="false" />
+    <Property Name="key2" Type="Binary" MaxLength="50" FixedLength="false" />
+    <Property Name="seqNum" Type="Int32" Nullable="false" />
+    <Property Name="count20Left" Type="Int32" Nullable="false" />
+    <Property Name="count5Left" Type="Int32" Nullable="false" />
+    <Property Name="HostTerminalID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MerchantID" Type="Int32" Nullable="false" />
+    <Property Name="lastUpdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="pushUpdate" Type="Boolean" Nullable="false" />
+    <Property Name="Protocol" Type="Int32" Nullable="false" />
+    <Property Name="ProcessorId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MerchantKeys">
+    <Key>
+      <PropertyRef Name="MerchantKeyID" />
+    </Key>
+    <Property Name="MerchantKeyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MerchantID" Type="Int32" Nullable="false" />
+    <Property Name="kid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Merchants">
+    <Key>
+      <PropertyRef Name="MerchantID" />
+    </Key>
+    <Property Name="MerchantID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="merchantname" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="merchantphone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="merchantStreet1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="merchantStreet2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="merchantCity" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="merchantState" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="merchantZip" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="owner" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bankName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bankAccount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bankRouting" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="atmFee" Type="Int32" Nullable="false" />
+    <Property Name="active" Type="Boolean" Nullable="false" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="posId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TimeZones">
+    <Key>
+      <PropertyRef Name="tzid" />
+    </Key>
+    <Property Name="tzid" Type="Int32" Nullable="false" />
+    <Property Name="state" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="timeZone" Type="Int32" Nullable="false" />
+    <Property Name="timeZone2" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tokens">
+    <Key>
+      <PropertyRef Name="tokenid" />
+    </Key>
+    <Property Name="tokenid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="keyid" Type="Int32" Nullable="false" />
+    <Property Name="expires" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="keyguid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KeyView">
+    <Key>
+      <PropertyRef Name="merchantname" />
+      <PropertyRef Name="atmFee" />
+      <PropertyRef Name="active" />
+      <PropertyRef Name="timeZone2" />
+      <PropertyRef Name="timeZone" />
+      <PropertyRef Name="pushUpdate" />
+      <PropertyRef Name="tid" />
+      <PropertyRef Name="count5Left" />
+      <PropertyRef Name="count20Left" />
+      <PropertyRef Name="seqNum" />
+      <PropertyRef Name="pkey" />
+      <PropertyRef Name="mkey" />
+      <PropertyRef Name="kid" />
+      <PropertyRef Name="MerchantID" />
+      <PropertyRef Name="password" />
+      <PropertyRef Name="lastUpdate" />
+      <PropertyRef Name="owner" />
+      <PropertyRef Name="Protocol" />
+      <PropertyRef Name="ProcessorId" />
+    </Key>
+    <Property Name="merchantname" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="merchantStreet1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="merchantStreet2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="merchantCity" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="merchantState" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="merchantZip" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="atmFee" Type="Int32" Nullable="false" />
+    <Property Name="active" Type="Boolean" Nullable="false" />
+    <Property Name="timeZone2" Type="Int32" Nullable="false" />
+    <Property Name="timeZone" Type="Int32" Nullable="false" />
+    <Property Name="pushUpdate" Type="Boolean" Nullable="false" />
+    <Property Name="tid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="count5Left" Type="Int32" Nullable="false" />
+    <Property Name="count20Left" Type="Int32" Nullable="false" />
+    <Property Name="seqNum" Type="Int32" Nullable="false" />
+    <Property Name="key2" Type="Binary" MaxLength="50" FixedLength="false" />
+    <Property Name="key1" Type="Binary" MaxLength="50" FixedLength="false" />
+    <Property Name="pkey" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mkey" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="kid" Type="Int32" Nullable="false" />
+    <Property Name="merchantphone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MerchantID" Type="Int32" Nullable="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="lastUpdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="owner" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Protocol" Type="Int32" Nullable="false" />
+    <Property Name="posId" Type="Int32" />
+    <Property Name="ProcessorId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CreditOfferScheduledPaymentAttempts">
+    <Key>
+      <PropertyRef Name="CreditOfferScheduledPaymentAttemptID" />
+    </Key>
+    <Property Name="CreditOfferScheduledPaymentAttemptID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CreditOfferDetailPaymentID" Type="Int32" Nullable="false" />
+    <Property Name="ReqId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CreditOfferScheduledPayments">
+    <Key>
+      <PropertyRef Name="CreditOfferDetailPaymentID" />
+    </Key>
+    <Property Name="CreditOfferDetailPaymentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PaymentAmount" Type="Int32" Nullable="false" />
+    <Property Name="BaseAmount" Type="Int32" Nullable="false" />
+    <Property Name="Interest" Type="Int32" Nullable="false" />
+    <Property Name="PaymentFee" Type="Int32" Nullable="false" />
+    <Property Name="CreditOfferID" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Paid" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CreditOfferDetails">
+    <Key>
+      <PropertyRef Name="CreditOfferDetailId" />
+    </Key>
+    <Property Name="CreditOfferDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ConfirmStatus" Type="Int32" Nullable="false" />
+    <Property Name="SN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OriginalPurchaseAmount" Type="Int32" Nullable="false" />
+    <Property Name="TotalInterest" Type="Int32" />
+    <Property Name="TotalFees" Type="Int32" />
+    <Property Name="CreditRequestId" Type="Int32" Nullable="false" />
+    <Property Name="Approved" Type="Boolean" Nullable="false" />
+    <Property Name="Accepted" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CreditRequests">
+    <Key>
+      <PropertyRef Name="CreditRequestId" />
+    </Key>
+    <Property Name="CreditRequestId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Track1" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Track2" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="pan" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="requestTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="responeCode" Type="Int32" />
+    <Property Name="responseText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="hash" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="pin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="emv" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DeviceTerminalLinks">
+    <Key>
+      <PropertyRef Name="DeviceTerminalLinkId" />
+    </Key>
+    <Property Name="DeviceTerminalLinkId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeviceSerialId" Type="Int32" />
+    <Property Name="StoreTerminalID" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="MerchantID" Type="Int32" Nullable="false" />
+    <Property Name="Connected" Type="Boolean" Nullable="false" />
+    <Property Name="DeviceHRName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UpdateOrderResponses">
+    <Key>
+      <PropertyRef Name="UpdateOrderId" />
+    </Key>
+    <Property Name="UpdateOrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="response_code" Type="Int32" Nullable="false" />
+    <Property Name="response_message" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="transaction_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="sn" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sequence_number" Type="Int32" Nullable="false" />
+    <Property Name="callback_url" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="txnid" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="order_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="reqId" Type="Int32" Nullable="false" />
+    <Property Name="cashback_amount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="total_amount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cardholder_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="last_4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="card_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ApiKeys">
+    <Key>
+      <PropertyRef Name="ApiKeyId" />
+    </Key>
+    <Property Name="ApiKeyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApiKey" Type="String" Nullable="false" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="ApiId" Type="Int32" Nullable="false" />
+    <Property Name="MerchantId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ForwardTxnRequests">
+    <Key>
+      <PropertyRef Name="ForwardTxnRequestId" />
+    </Key>
+    <Property Name="ForwardTxnRequestId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="register_id" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="base_amount" Type="Int32" Nullable="false" />
+    <Property Name="tip_amount" Type="Int32" Nullable="false" />
+    <Property Name="time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MerchantID" Type="Int32" Nullable="false" />
+    <Property Name="apikey" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="callback_url" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="order_id" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="register_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="device_serial" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PosIntegrations">
+    <Key>
+      <PropertyRef Name="PosId" />
+    </Key>
+    <Property Name="PosId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Processors">
+    <Key>
+      <PropertyRef Name="ProcessorId" />
+    </Key>
+    <Property Name="ProcessorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="url" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="port" Type="Int32" Nullable="false" />
+    <Property Name="comId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="protocol" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Requests">
+    <Key>
+      <PropertyRef Name="RequestID" />
+    </Key>
+    <Property Name="RequestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="request" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="response" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="responseCode" Type="Int32" />
+    <Property Name="error" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="pan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="exp" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="pin" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="time" Type="DateTime" Precision="3" />
+    <Property Name="amount" Type="Int32" />
+    <Property Name="seqNum" Type="Int32" />
+    <Property Name="HostTerminalID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DeviceSerial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MerchantID" Type="Int32" />
+    <Property Name="kid" Type="Int32" />
+    <Property Name="ip" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="originalAmount" Type="Int32" />
+    <Property Name="cashBack" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PosEnabled">
+    <Key>
+      <PropertyRef Name="PosEnabledId" />
+    </Key>
+    <Property Name="PosEnabledId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeviceSerialId" Type="Int32" Nullable="false" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+  </EntityType>
+</Schema>

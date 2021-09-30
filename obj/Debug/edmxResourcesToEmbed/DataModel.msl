@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VoyagerModelStoreContainer" CdmEntityContainer="VoyagerEntities">
+    <EntitySetMapping Name="BatchCloses">
+      <EntityTypeMapping TypeName="VoyagerModel.BatchCloses">
+        <MappingFragment StoreEntitySet="BatchCloses">
+          <ScalarProperty Name="MerchantID" ColumnName="MerchantID" />
+          <ScalarProperty Name="DeviceSerial" ColumnName="DeviceSerial" />
+          <ScalarProperty Name="DeviceSerialID" ColumnName="DeviceSerialID" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="batchCloseId" ColumnName="batchCloseId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeviceSerials">
+      <EntityTypeMapping TypeName="VoyagerModel.DeviceSerials">
+        <MappingFragment StoreEntitySet="DeviceSerials">
+          <ScalarProperty Name="DeviceSerial" ColumnName="DeviceSerial" />
+          <ScalarProperty Name="MerchantID" ColumnName="MerchantID" />
+          <ScalarProperty Name="DeviceSerialID" ColumnName="DeviceSerialID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HostTotals">
+      <EntityTypeMapping TypeName="VoyagerModel.HostTotals">
+        <MappingFragment StoreEntitySet="HostTotals">
+          <ScalarProperty Name="kid" ColumnName="kid" />
+          <ScalarProperty Name="withdrawalCount" ColumnName="withdrawalCount" />
+          <ScalarProperty Name="withdrawalAmount" ColumnName="withdrawalAmount" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="HostTotalID" ColumnName="HostTotalID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Keys">
+      <EntityTypeMapping TypeName="VoyagerModel.Keys">
+        <MappingFragment StoreEntitySet="Keys">
+          <ScalarProperty Name="ProcessorId" ColumnName="ProcessorId" />
+          <ScalarProperty Name="Protocol" ColumnName="Protocol" />
+          <ScalarProperty Name="pushUpdate" ColumnName="pushUpdate" />
+          <ScalarProperty Name="lastUpdate" ColumnName="lastUpdate" />
+          <ScalarProperty Name="MerchantID" ColumnName="MerchantID" />
+          <ScalarProperty Name="HostTerminalID" ColumnName="HostTerminalID" />
+          <ScalarProperty Name="count5Left" ColumnName="count5Left" />
+          <ScalarProperty Name="count20Left" ColumnName="count20Left" />
+          <ScalarProperty Name="seqNum" ColumnName="seqNum" />
+          <ScalarProperty Name="key2" ColumnName="key2" />
+          <ScalarProperty Name="key1" ColumnName="key1" />
+          <ScalarProperty Name="pkey" ColumnName="pkey" />
+          <ScalarProperty Name="mkey" ColumnName="mkey" />
+          <ScalarProperty Name="kid" ColumnName="kid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MerchantKeys">
+      <EntityTypeMapping TypeName="VoyagerModel.MerchantKeys">
+        <MappingFragment StoreEntitySet="MerchantKeys">
+          <ScalarProperty Name="kid" ColumnName="kid" />
+          <ScalarProperty Name="MerchantID" ColumnName="MerchantID" />
+          <ScalarProperty Name="MerchantKeyID" ColumnName="MerchantKeyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Merchants">
+      <EntityTypeMapping TypeName="VoyagerModel.Merchants">
+        <MappingFragment StoreEntitySet="Merchants">
+          <ScalarProperty Name="posId" ColumnName="posId" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="atmFee" ColumnName="atmFee" />
+          <ScalarProperty Name="bankRouting" ColumnName="bankRouting" />
+          <ScalarProperty Name="bankAccount" ColumnName="bankAccount" />
+          <ScalarProperty Name="bankName" ColumnName="bankName" />
+          <ScalarProperty Name="owner" ColumnName="owner" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="merchantZip" ColumnName="merchantZip" />
+          <ScalarProperty Name="merchantState" ColumnName="merchantState" />
+          <ScalarProperty Name="merchantCity" ColumnName="merchantCity" />
+          <ScalarProperty Name="merchantStreet2" ColumnName="merchantStreet2" />
+          <ScalarProperty Name="merchantStreet1" ColumnName="merchantStreet1" />
+          <ScalarProperty Name="merchantphone" ColumnName="merchantphone" />
+          <ScalarProperty Name="merchantname" ColumnName="merchantname" />
+          <ScalarProperty Name="MerchantID" ColumnName="MerchantID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimeZones">
+      <EntityTypeMapping TypeName="VoyagerModel.TimeZones">
+        <MappingFragment StoreEntitySet="TimeZones">
+          <ScalarProperty Name="timeZone2" ColumnName="timeZone2" />
+          <ScalarProperty Name="timeZone" ColumnName="timeZone" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="tzid" ColumnName="tzid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tokens">
+      <EntityTypeMapping TypeName="VoyagerModel.Tokens">
+        <MappingFragment StoreEntitySet="Tokens">
+          <ScalarProperty Name="keyguid" ColumnName="keyguid" />
+          <ScalarProperty Name="expires" ColumnName="expires" />
+          <ScalarProperty Name="keyid" ColumnName="keyid" />
+          <ScalarProperty Name="tokenid" ColumnName="tokenid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KeyView">
+      <EntityTypeMapping TypeName="VoyagerModel.KeyView">
+        <MappingFragment StoreEntitySet="KeyView">
+          <ScalarProperty Name="ProcessorId" ColumnName="ProcessorId" />
+          <ScalarProperty Name="posId" ColumnName="posId" />
+          <ScalarProperty Name="Protocol" ColumnName="Protocol" />
+          <ScalarProperty Name="owner" ColumnName="owner" />
+          <ScalarProperty Name="lastUpdate" ColumnName="lastUpdate" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="MerchantID" ColumnName="MerchantID" />
+          <ScalarProperty Name="merchantphone" ColumnName="merchantphone" />
+          <ScalarProperty Name="kid" ColumnName="kid" />
+          <ScalarProperty Name="mkey" ColumnName="mkey" />
+          <ScalarProperty Name="pkey" ColumnName="pkey" />
+          <ScalarProperty Name="key1" ColumnName="key1" />
+          <ScalarProperty Name="key2" ColumnName="key2" />
+          <ScalarProperty Name="seqNum" ColumnName="seqNum" />
+          <ScalarProperty Name="count20Left" ColumnName="count20Left" />
+          <ScalarProperty Name="count5Left" ColumnName="count5Left" />
+          <ScalarProperty Name="tid" ColumnName="tid" />
+          <ScalarProperty Name="pushUpdate" ColumnName="pushUpdate" />
+          <ScalarProperty Name="timeZone" ColumnName="timeZone" />
+          <ScalarProperty Name="timeZone2" ColumnName="timeZone2" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="atmFee" ColumnName="atmFee" />
+          <ScalarProperty Name="merchantZip" ColumnName="merchantZip" />
+          <ScalarProperty Name="merchantState" ColumnName="merchantState" />
+          <ScalarProperty Name="merchantCity" ColumnName="merchantCity" />
+          <ScalarProperty Name="merchantStreet2" ColumnName="merchantStreet2" />
+          <ScalarProperty Name="merchantStreet1" ColumnName="merchantStreet1" />
+          <ScalarProperty Name="merchantname" ColumnName="merchantname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CreditOfferScheduledPaymentAttempts">
+      <EntityTypeMapping TypeName="VoyagerModel.CreditOfferScheduledPaymentAttempts">
+        <MappingFragment StoreEntitySet="CreditOfferScheduledPaymentAttempts">
+          <ScalarProperty Name="ReqId" ColumnName="ReqId" />
+          <ScalarProperty Name="CreditOfferDetailPaymentID" ColumnName="CreditOfferDetailPaymentID" />
+          <ScalarProperty Name="CreditOfferScheduledPaymentAttemptID" ColumnName="CreditOfferScheduledPaymentAttemptID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CreditOfferScheduledPayments">
+      <EntityTypeMapping TypeName="VoyagerModel.CreditOfferScheduledPayments">
+        <MappingFragment StoreEntitySet="CreditOfferScheduledPayments">
+          <ScalarProperty Name="Paid" ColumnName="Paid" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="CreditOfferID" ColumnName="CreditOfferID" />
+          <ScalarProperty Name="PaymentFee" ColumnName="PaymentFee" />
+          <ScalarProperty Name="Interest" ColumnName="Interest" />
+          <ScalarProperty Name="BaseAmount" ColumnName="BaseAmount" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="CreditOfferDetailPaymentID" ColumnName="CreditOfferDetailPaymentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CreditOfferDetails">
+      <EntityTypeMapping TypeName="VoyagerModel.CreditOfferDetails">
+        <MappingFragment StoreEntitySet="CreditOfferDetails">
+          <ScalarProperty Name="Accepted" ColumnName="Accepted" />
+          <ScalarProperty Name="Approved" ColumnName="Approved" />
+          <ScalarProperty Name="CreditRequestId" ColumnName="CreditRequestId" />
+          <ScalarProperty Name="TotalFees" ColumnName="TotalFees" />
+          <ScalarProperty Name="TotalInterest" ColumnName="TotalInterest" />
+          <ScalarProperty Name="OriginalPurchaseAmount" ColumnName="OriginalPurchaseAmount" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="SN" ColumnName="SN" />
+          <ScalarProperty Name="ConfirmStatus" ColumnName="ConfirmStatus" />
+          <ScalarProperty Name="CreditOfferDetailId" ColumnName="CreditOfferDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CreditRequests">
+      <EntityTypeMapping TypeName="VoyagerModel.CreditRequests">
+        <MappingFragment StoreEntitySet="CreditRequests">
+          <ScalarProperty Name="emv" ColumnName="emv" />
+          <ScalarProperty Name="pin" ColumnName="pin" />
+          <ScalarProperty Name="hash" ColumnName="hash" />
+          <ScalarProperty Name="responseText" ColumnName="responseText" />
+          <ScalarProperty Name="responeCode" ColumnName="responeCode" />
+          <ScalarProperty Name="requestTime" ColumnName="requestTime" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="pan" ColumnName="pan" />
+          <ScalarProperty Name="Track2" ColumnName="Track2" />
+          <ScalarProperty Name="Track1" ColumnName="Track1" />
+          <ScalarProperty Name="CreditRequestId" ColumnName="CreditRequestId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeviceTerminalLinks">
+      <EntityTypeMapping TypeName="VoyagerModel.DeviceTerminalLinks">
+        <MappingFragment StoreEntitySet="DeviceTerminalLinks">
+          <ScalarProperty Name="DeviceHRName" ColumnName="DeviceHRName" />
+          <ScalarProperty Name="Connected" ColumnName="Connected" />
+          <ScalarProperty Name="MerchantID" ColumnName="MerchantID" />
+          <ScalarProperty Name="StoreTerminalID" ColumnName="StoreTerminalID" />
+          <ScalarProperty Name="DeviceSerialId" ColumnName="DeviceSerialId" />
+          <ScalarProperty Name="DeviceTerminalLinkId" ColumnName="DeviceTerminalLinkId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UpdateOrderResponses">
+      <EntityTypeMapping TypeName="VoyagerModel.UpdateOrderResponses">
+        <MappingFragment StoreEntitySet="UpdateOrderResponses">
+          <ScalarProperty Name="card_type" ColumnName="card_type" />
+          <ScalarProperty Name="last_4" ColumnName="last_4" />
+          <ScalarProperty Name="cardholder_name" ColumnName="cardholder_name" />
+          <ScalarProperty Name="total_amount" ColumnName="total_amount" />
+          <ScalarProperty Name="cashback_amount" ColumnName="cashback_amount" />
+          <ScalarProperty Name="reqId" ColumnName="reqId" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="txnid" ColumnName="txnid" />
+          <ScalarProperty Name="callback_url" ColumnName="callback_url" />
+          <ScalarProperty Name="sequence_number" ColumnName="sequence_number" />
+          <ScalarProperty Name="sn" ColumnName="sn" />
+          <ScalarProperty Name="transaction_time" ColumnName="transaction_time" />
+          <ScalarProperty Name="response_message" ColumnName="response_message" />
+          <ScalarProperty Name="response_code" ColumnName="response_code" />
+          <ScalarProperty Name="UpdateOrderId" ColumnName="UpdateOrderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApiKeys">
+      <EntityTypeMapping TypeName="VoyagerModel.ApiKeys">
+        <MappingFragment StoreEntitySet="ApiKeys">
+          <ScalarProperty Name="MerchantId" ColumnName="MerchantId" />
+          <ScalarProperty Name="ApiId" ColumnName="ApiId" />
+          <ScalarProperty Name="ApiKey" ColumnName="ApiKey" />
+          <ScalarProperty Name="ApiKeyId" ColumnName="ApiKeyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ForwardTxnRequests">
+      <EntityTypeMapping TypeName="VoyagerModel.ForwardTxnRequests">
+        <MappingFragment StoreEntitySet="ForwardTxnRequests">
+          <ScalarProperty Name="device_serial" ColumnName="device_serial" />
+          <ScalarProperty Name="register_name" ColumnName="register_name" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="callback_url" ColumnName="callback_url" />
+          <ScalarProperty Name="apikey" ColumnName="apikey" />
+          <ScalarProperty Name="MerchantID" ColumnName="MerchantID" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="tip_amount" ColumnName="tip_amount" />
+          <ScalarProperty Name="base_amount" ColumnName="base_amount" />
+          <ScalarProperty Name="register_id" ColumnName="register_id" />
+          <ScalarProperty Name="ForwardTxnRequestId" ColumnName="ForwardTxnRequestId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PosIntegrations">
+      <EntityTypeMapping TypeName="VoyagerModel.PosIntegrations">
+        <MappingFragment StoreEntitySet="PosIntegrations">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PosId" ColumnName="PosId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Processors">
+      <EntityTypeMapping TypeName="VoyagerModel.Processors">
+        <MappingFragment StoreEntitySet="Processors">
+          <ScalarProperty Name="protocol" ColumnName="protocol" />
+          <ScalarProperty Name="comId" ColumnName="comId" />
+          <ScalarProperty Name="port" ColumnName="port" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ProcessorId" ColumnName="ProcessorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Requests">
+      <EntityTypeMapping TypeName="VoyagerModel.Requests">
+        <MappingFragment StoreEntitySet="Requests">
+          <ScalarProperty Name="cashBack" ColumnName="cashBack" />
+          <ScalarProperty Name="originalAmount" ColumnName="originalAmount" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="kid" ColumnName="kid" />
+          <ScalarProperty Name="MerchantID" ColumnName="MerchantID" />
+          <ScalarProperty Name="DeviceSerial" ColumnName="DeviceSerial" />
+          <ScalarProperty Name="HostTerminalID" ColumnName="HostTerminalID" />
+          <ScalarProperty Name="seqNum" ColumnName="seqNum" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="pin" ColumnName="pin" />
+          <ScalarProperty Name="exp" ColumnName="exp" />
+          <ScalarProperty Name="pan" ColumnName="pan" />
+          <ScalarProperty Name="error" ColumnName="error" />
+          <ScalarProperty Name="responseCode" ColumnName="responseCode" />
+          <ScalarProperty Name="response" ColumnName="response" />
+          <ScalarProperty Name="request" ColumnName="request" />
+          <ScalarProperty Name="RequestID" ColumnName="RequestID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PosEnabled">
+      <EntityTypeMapping TypeName="VoyagerModel.PosEnabled">
+        <MappingFragment StoreEntitySet="PosEnabled">
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="DeviceSerialId" ColumnName="DeviceSerialId" />
+          <ScalarProperty Name="PosEnabledId" ColumnName="PosEnabledId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

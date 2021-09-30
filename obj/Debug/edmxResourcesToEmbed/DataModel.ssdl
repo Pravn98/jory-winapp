@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VoyagerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ApiKeys">
+    <Key>
+      <PropertyRef Name="ApiKeyId" />
+    </Key>
+    <Property Name="ApiKeyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ApiKey" Type="varchar" MaxLength="5000" Nullable="false" />
+    <Property Name="ApiId" Type="int" Nullable="false" />
+    <Property Name="MerchantId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BatchCloses">
+    <Key>
+      <PropertyRef Name="batchCloseId" />
+    </Key>
+    <Property Name="batchCloseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="time" Type="datetime" Nullable="false" />
+    <Property Name="DeviceSerialID" Type="int" Nullable="false" />
+    <Property Name="DeviceSerial" Type="varchar" MaxLength="50" />
+    <Property Name="MerchantID" Type="int" />
+  </EntityType>
+  <EntityType Name="CreditOfferDetails">
+    <Key>
+      <PropertyRef Name="CreditOfferDetailId" />
+    </Key>
+    <Property Name="CreditOfferDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ConfirmStatus" Type="int" Nullable="false" />
+    <Property Name="SN" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateTime" Type="datetime" Nullable="false" />
+    <Property Name="OriginalPurchaseAmount" Type="int" Nullable="false" />
+    <Property Name="TotalInterest" Type="int" />
+    <Property Name="TotalFees" Type="int" />
+    <Property Name="CreditRequestId" Type="int" Nullable="false" />
+    <Property Name="Approved" Type="bit" Nullable="false" />
+    <Property Name="Accepted" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CreditOfferScheduledPaymentAttempts">
+    <Key>
+      <PropertyRef Name="CreditOfferScheduledPaymentAttemptID" />
+    </Key>
+    <Property Name="CreditOfferScheduledPaymentAttemptID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CreditOfferDetailPaymentID" Type="int" Nullable="false" />
+    <Property Name="ReqId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CreditOfferScheduledPayments">
+    <Key>
+      <PropertyRef Name="CreditOfferDetailPaymentID" />
+    </Key>
+    <Property Name="CreditOfferDetailPaymentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaymentAmount" Type="int" Nullable="false" />
+    <Property Name="BaseAmount" Type="int" Nullable="false" />
+    <Property Name="Interest" Type="int" Nullable="false" />
+    <Property Name="PaymentFee" Type="int" Nullable="false" />
+    <Property Name="CreditOfferID" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="Paid" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CreditRequests">
+    <Key>
+      <PropertyRef Name="CreditRequestId" />
+    </Key>
+    <Property Name="CreditRequestId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Track1" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Track2" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="pan" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="requestTime" Type="datetime" Nullable="false" />
+    <Property Name="responeCode" Type="int" />
+    <Property Name="responseText" Type="text" />
+    <Property Name="hash" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="pin" Type="varchar" MaxLength="50" />
+    <Property Name="emv" Type="text" />
+  </EntityType>
+  <EntityType Name="DeviceSerials">
+    <Key>
+      <PropertyRef Name="DeviceSerialID" />
+    </Key>
+    <Property Name="DeviceSerialID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MerchantID" Type="int" Nullable="false" />
+    <Property Name="DeviceSerial" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DeviceTerminalLinks">
+    <Key>
+      <PropertyRef Name="DeviceTerminalLinkId" />
+    </Key>
+    <Property Name="DeviceTerminalLinkId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeviceSerialId" Type="int" />
+    <Property Name="StoreTerminalID" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="MerchantID" Type="int" Nullable="false" />
+    <Property Name="Connected" Type="bit" Nullable="false" />
+    <Property Name="DeviceHRName" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="ForwardTxnRequests">
+    <Key>
+      <PropertyRef Name="ForwardTxnRequestId" />
+    </Key>
+    <Property Name="ForwardTxnRequestId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="register_id" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="register_name" Type="varchar" MaxLength="100" />
+    <Property Name="base_amount" Type="int" Nullable="false" />
+    <Property Name="tip_amount" Type="int" Nullable="false" />
+    <Property Name="time" Type="datetime" Nullable="false" />
+    <Property Name="MerchantID" Type="int" Nullable="false" />
+    <Property Name="apikey" Type="varchar" MaxLength="200" />
+    <Property Name="callback_url" Type="varchar" MaxLength="500" />
+    <Property Name="order_id" Type="varchar" MaxLength="200" />
+    <Property Name="device_serial" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="HostTotals">
+    <Key>
+      <PropertyRef Name="HostTotalID" />
+    </Key>
+    <Property Name="HostTotalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="time" Type="datetime" Nullable="false" />
+    <Property Name="withdrawalAmount" Type="int" Nullable="false" />
+    <Property Name="withdrawalCount" Type="int" Nullable="false" />
+    <Property Name="kid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Keys">
+    <Key>
+      <PropertyRef Name="kid" />
+    </Key>
+    <Property Name="kid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mkey" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="pkey" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="key1" Type="varbinary" MaxLength="50" />
+    <Property Name="key2" Type="varbinary" MaxLength="50" />
+    <Property Name="seqNum" Type="int" Nullable="false" />
+    <Property Name="count20Left" Type="int" Nullable="false" />
+    <Property Name="count5Left" Type="int" Nullable="false" />
+    <Property Name="HostTerminalID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MerchantID" Type="int" Nullable="false" />
+    <Property Name="lastUpdate" Type="datetime" Nullable="false" />
+    <Property Name="pushUpdate" Type="bit" Nullable="false" />
+    <Property Name="Protocol" Type="int" Nullable="false" />
+    <Property Name="ProcessorId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MerchantKeys">
+    <Key>
+      <PropertyRef Name="MerchantKeyID" />
+    </Key>
+    <Property Name="MerchantKeyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MerchantID" Type="int" Nullable="false" />
+    <Property Name="kid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Merchants">
+    <Key>
+      <PropertyRef Name="MerchantID" />
+    </Key>
+    <Property Name="MerchantID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="merchantname" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="merchantphone" Type="varchar" MaxLength="50" />
+    <Property Name="merchantStreet1" Type="varchar" MaxLength="100" />
+    <Property Name="merchantStreet2" Type="varchar" MaxLength="100" />
+    <Property Name="merchantCity" Type="varchar" MaxLength="100" />
+    <Property Name="merchantState" Type="varchar" MaxLength="2" />
+    <Property Name="merchantZip" Type="varchar" MaxLength="15" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="owner" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bankName" Type="varchar" MaxLength="50" />
+    <Property Name="bankAccount" Type="varchar" MaxLength="50" />
+    <Property Name="bankRouting" Type="varchar" MaxLength="50" />
+    <Property Name="atmFee" Type="int" Nullable="false" />
+    <Property Name="active" Type="bit" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="50" />
+    <Property Name="posId" Type="int" />
+  </EntityType>
+  <EntityType Name="PosEnabled">
+    <Key>
+      <PropertyRef Name="PosEnabledId" />
+    </Key>
+    <Property Name="PosEnabledId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeviceSerialId" Type="int" Nullable="false" />
+    <Property Name="Enabled" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PosIntegrations">
+    <Key>
+      <PropertyRef Name="PosId" />
+    </Key>
+    <Property Name="PosId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Processors">
+    <Key>
+      <PropertyRef Name="ProcessorId" />
+    </Key>
+    <Property Name="ProcessorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="url" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="port" Type="int" Nullable="false" />
+    <Property Name="comId" Type="varchar" MaxLength="50" />
+    <Property Name="protocol" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Requests">
+    <Key>
+      <PropertyRef Name="RequestID" />
+    </Key>
+    <Property Name="RequestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="request" Type="text" />
+    <Property Name="response" Type="text" />
+    <Property Name="responseCode" Type="int" />
+    <Property Name="error" Type="text" />
+    <Property Name="pan" Type="varchar" MaxLength="50" />
+    <Property Name="exp" Type="varchar" MaxLength="100" />
+    <Property Name="pin" Type="varchar" MaxLength="12" />
+    <Property Name="time" Type="datetime" />
+    <Property Name="amount" Type="int" />
+    <Property Name="seqNum" Type="int" />
+    <Property Name="HostTerminalID" Type="varchar" MaxLength="50" />
+    <Property Name="DeviceSerial" Type="varchar" MaxLength="50" />
+    <Property Name="MerchantID" Type="int" />
+    <Property Name="kid" Type="int" />
+    <Property Name="ip" Type="varchar" MaxLength="150" />
+    <Property Name="originalAmount" Type="int" />
+    <Property Name="cashBack" Type="int" />
+  </EntityType>
+  <EntityType Name="TimeZones">
+    <Key>
+      <PropertyRef Name="tzid" />
+    </Key>
+    <Property Name="tzid" Type="int" Nullable="false" />
+    <Property Name="state" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="timeZone" Type="int" Nullable="false" />
+    <Property Name="timeZone2" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tokens">
+    <Key>
+      <PropertyRef Name="tokenid" />
+    </Key>
+    <Property Name="tokenid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="keyid" Type="int" Nullable="false" />
+    <Property Name="expires" Type="datetime" Nullable="false" />
+    <Property Name="keyguid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UpdateOrderResponses">
+    <Key>
+      <PropertyRef Name="UpdateOrderId" />
+    </Key>
+    <Property Name="UpdateOrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="response_code" Type="int" Nullable="false" />
+    <Property Name="response_message" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="transaction_time" Type="datetime" Nullable="false" />
+    <Property Name="sn" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="sequence_number" Type="int" Nullable="false" />
+    <Property Name="callback_url" Type="varchar" MaxLength="500" />
+    <Property Name="txnid" Type="varchar" MaxLength="100" />
+    <Property Name="order_id" Type="varchar" MaxLength="100" />
+    <Property Name="reqId" Type="int" Nullable="false" />
+    <Property Name="cashback_amount" Type="varchar" MaxLength="50" />
+    <Property Name="total_amount" Type="varchar" MaxLength="50" />
+    <Property Name="cardholder_name" Type="varchar" MaxLength="150" />
+    <Property Name="last_4" Type="varchar" MaxLength="50" />
+    <Property Name="card_type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'VoyagerMoveTest.dbo.KeyView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="KeyView">
+    <Key>
+      <PropertyRef Name="merchantname" />
+      <PropertyRef Name="atmFee" />
+      <PropertyRef Name="active" />
+      <PropertyRef Name="timeZone2" />
+      <PropertyRef Name="timeZone" />
+      <PropertyRef Name="pushUpdate" />
+      <PropertyRef Name="tid" />
+      <PropertyRef Name="count5Left" />
+      <PropertyRef Name="count20Left" />
+      <PropertyRef Name="seqNum" />
+      <PropertyRef Name="pkey" />
+      <PropertyRef Name="mkey" />
+      <PropertyRef Name="kid" />
+      <PropertyRef Name="MerchantID" />
+      <PropertyRef Name="password" />
+      <PropertyRef Name="lastUpdate" />
+      <PropertyRef Name="owner" />
+      <PropertyRef Name="Protocol" />
+      <PropertyRef Name="ProcessorId" />
+    </Key>
+    <Property Name="merchantname" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="merchantStreet1" Type="varchar" MaxLength="100" />
+    <Property Name="merchantStreet2" Type="varchar" MaxLength="100" />
+    <Property Name="merchantCity" Type="varchar" MaxLength="100" />
+    <Property Name="merchantState" Type="varchar" MaxLength="2" />
+    <Property Name="merchantZip" Type="varchar" MaxLength="15" />
+    <Property Name="atmFee" Type="int" Nullable="false" />
+    <Property Name="active" Type="bit" Nullable="false" />
+    <Property Name="timeZone2" Type="int" Nullable="false" />
+    <Property Name="timeZone" Type="int" Nullable="false" />
+    <Property Name="pushUpdate" Type="bit" Nullable="false" />
+    <Property Name="tid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="count5Left" Type="int" Nullable="false" />
+    <Property Name="count20Left" Type="int" Nullable="false" />
+    <Property Name="seqNum" Type="int" Nullable="false" />
+    <Property Name="key2" Type="varbinary" MaxLength="50" />
+    <Property Name="key1" Type="varbinary" MaxLength="50" />
+    <Property Name="pkey" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mkey" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="kid" Type="int" Nullable="false" />
+    <Property Name="merchantphone" Type="varchar" MaxLength="50" />
+    <Property Name="MerchantID" Type="int" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="lastUpdate" Type="datetime" Nullable="false" />
+    <Property Name="owner" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Protocol" Type="int" Nullable="false" />
+    <Property Name="posId" Type="int" />
+    <Property Name="ProcessorId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="VoyagerModelStoreContainer">
+    <EntitySet Name="ApiKeys" EntityType="Self.ApiKeys" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BatchCloses" EntityType="Self.BatchCloses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CreditOfferDetails" EntityType="Self.CreditOfferDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CreditOfferScheduledPaymentAttempts" EntityType="Self.CreditOfferScheduledPaymentAttempts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CreditOfferScheduledPayments" EntityType="Self.CreditOfferScheduledPayments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CreditRequests" EntityType="Self.CreditRequests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DeviceSerials" EntityType="Self.DeviceSerials" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DeviceTerminalLinks" EntityType="Self.DeviceTerminalLinks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ForwardTxnRequests" EntityType="Self.ForwardTxnRequests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HostTotals" EntityType="Self.HostTotals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Keys" EntityType="Self.Keys" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MerchantKeys" EntityType="Self.MerchantKeys" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Merchants" EntityType="Self.Merchants" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PosEnabled" EntityType="Self.PosEnabled" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PosIntegrations" EntityType="Self.PosIntegrations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Processors" EntityType="Self.Processors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Requests" EntityType="Self.Requests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TimeZones" EntityType="Self.TimeZones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tokens" EntityType="Self.Tokens" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UpdateOrderResponses" EntityType="Self.UpdateOrderResponses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KeyView" EntityType="Self.KeyView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [KeyView].[merchantname] AS [merchantname], 
+    [KeyView].[merchantStreet1] AS [merchantStreet1], 
+    [KeyView].[merchantStreet2] AS [merchantStreet2], 
+    [KeyView].[merchantCity] AS [merchantCity], 
+    [KeyView].[merchantState] AS [merchantState], 
+    [KeyView].[merchantZip] AS [merchantZip], 
+    [KeyView].[atmFee] AS [atmFee], 
+    [KeyView].[active] AS [active], 
+    [KeyView].[timeZone2] AS [timeZone2], 
+    [KeyView].[timeZone] AS [timeZone], 
+    [KeyView].[pushUpdate] AS [pushUpdate], 
+    [KeyView].[tid] AS [tid], 
+    [KeyView].[count5Left] AS [count5Left], 
+    [KeyView].[count20Left] AS [count20Left], 
+    [KeyView].[seqNum] AS [seqNum], 
+    [KeyView].[key2] AS [key2], 
+    [KeyView].[key1] AS [key1], 
+    [KeyView].[pkey] AS [pkey], 
+    [KeyView].[mkey] AS [mkey], 
+    [KeyView].[kid] AS [kid], 
+    [KeyView].[merchantphone] AS [merchantphone], 
+    [KeyView].[MerchantID] AS [MerchantID], 
+    [KeyView].[password] AS [password], 
+    [KeyView].[lastUpdate] AS [lastUpdate], 
+    [KeyView].[owner] AS [owner], 
+    [KeyView].[Protocol] AS [Protocol], 
+    [KeyView].[posId] AS [posId], 
+    [KeyView].[ProcessorId] AS [ProcessorId]
+    FROM [dbo].[KeyView] AS [KeyView]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
